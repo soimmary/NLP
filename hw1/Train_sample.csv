@@ -1,0 +1,721 @@
+,Title,Body,Tags
+916626,I dont understand why this log4j.xml is wrong,"<p>I wanna log into cassandra db with log4j.</p>
+
+<p>so I write this log4j.xml configuration.</p>
+
+<pre><code>    &lt;appender name=""DBlog"" class=""org.apache.log4j.jdbc.JDBCAppender""&gt;
+      &lt;param name=""URL"" value=""jdbc:cassandra://localhost:9160/MyKeyspace"" /&gt;
+      &lt;param name=""Driver"" value=""org.apache.cassandra.cql.jdbc.CassandraDriver"" /&gt;
+      &lt;param name=""User"" value="""" /&gt;
+      &lt;param name=""Password"" value="""" /&gt;
+      &lt;layout class=""...""/&gt;
+    &lt;/appender&gt;
+
+    &lt;logger name=""logger""&gt;
+      &lt;level value=""info""/&gt;
+      &lt;appender-ref ref=""DBlog"" /&gt;
+    &lt;/logger&gt;
+</code></pre>
+
+<p>Logging is doing well. but, log4j generate this message</p>
+
+<pre><code>log4j:WARN No appenders could be found for logger (org.apache.cassandra.cql.jdbc.CassandraDriver).
+log4j:WARN Please initialize the log4j system properly.
+</code></pre>
+
+<p>I dont understand what is wrong.
+Anyone knows answer, plz help.</p>
+",log4j cassandra
+768258,clone git repository via active FTP,"<p>I'm a branch office worker and have uploaded my existing repo to the ftp server at my company's central office. The central office is using Microsoft's ftp server. I have no access to install anything on the server and was only able to connect/browse to the ftp server using a real ftp client that supports active mode ftp. </p>
+
+<p>I have tried cloning with the following command lines:</p>
+
+<pre><code>git clone ftp://companyDomain\username@ftp.company.com/project.repo/.git 
+git clone ftp://username@company.com@ftp.company.com/project.repo/.git
+git clone ftp://username%40company.com@ftp.company.com/project.repo/.git
+git clone ftp://username:password@ftp.company.com/project.repo/.git
+</code></pre>
+
+<p>And I get the following error message:</p>
+
+<blockquote>
+  <p>error: Failed connect to <code>ftp.company.com:21</code>; No error while accessing
+  <code>ftp://companyDomain\username@ftp.company.com/project.repo/.git/info/refs</code>
+  fatal: HTTP request failed</p>
+</blockquote>
+
+<p>When entering the above commands I immediately get prompted for my password. I enter the password, some time passes and then I received the above error message.</p>
+
+<p>To be completely clear I'm am NOT looking to push the head version of my source to an FTP server for deployment, so things like git-ftp, <a href=""https://github.com/resmo/git-ftp"" rel=""nofollow"">https://github.com/resmo/git-ftp</a>, don't help me out at all. What I want to do is have my repo on the ftp server and everyone on my very small team be able to push/fetch changes to the repo on the ftp server. </p>
+
+<p>Does git support active FTP?
+What's going on?</p>
+
+<p>Thanks, 
+Chris</p>
+",git ftp clone
+2368609,How to print XSLT version supported by Xalan in Xalan c++?,"<p>I am using Xalan C++ library and I want to print the XSL version supported by it.
+How to print XSLT version supported by Xalan in Xalan c++ ?</p>
+
+<p>want to know whether there is any api/funtion in xalan which can return the version of XSL supported by Xalan.</p>
+
+<p>Thnks</p>
+",xalan
+131806,Hibernate mapping for cyclic relation ships,"<p>I am learning a hibernate and I am developing a very small project for learning purpose. I have a question </p>
+
+<p>I Have two projects
+    1. com.common.model
+    2. com.amar.model</p>
+
+<p>In first project (com.common.model) has a class called ""Person.java"" and it has their own ""Person.hbm.xml"" file.
+This person class has a properties like firstname, lastname and etc. This person has many addresses like</p>
+
+<pre><code>public class Person {
+private String fn;
+private String ln;
+private Set&lt;Address&gt; addresses;
+
+//getters and setters
+}
+</code></pre>
+
+<p>This address class is present in second project (com.amar.model)</p>
+
+<pre><code>public class Address {
+private String street;
+private String city;
+
+private Person person; -- Cause for cyclic dependency. How can I avoid this cyclic dependency and how can I map these properties with hibernate ?
+
+// getters and setters
+}
+</code></pre>
+
+<p>This address also has its own ""Address.hbm.xml""</p>
+
+<p>There is a dependency on both the classes. I mean one person has multiple addresses and also one address has related to one person only. So If I add an person entry in Address class it will show a cyclic dependency error. If I move this address class in common.model package my problem will solve but in future If I hit this problem how can I overcome this problem.</p>
+
+<p>So how can I avoid this situation and also how can I create a mapping for these two things.</p>
+",hibernate
+4213547,ffmpeg: how to add cartoon effect?,"<p>I was wondering if anyone out there has used the frie0r effects to change videos to look like they are cartoons through ffmpeg. I tried the code below and the output those not look like what a cartoon should be. Perhaps I am missing some perimeters but I cant seem to find anything online.</p>
+
+<pre><code>ffmpeg.exe -i input -vf ""frei0r=cartoon:0.6:0.00"" -q 0 output
+</code></pre>
+
+<p>if it helps, I am trying to get my video output to look like the cartoon image here:
+<a href=""http://www.openmovieeditor.org/filtereffects.html"" rel=""nofollow"">http://www.openmovieeditor.org/filtereffects.html</a></p>
+
+<p>Any help would be grateful. Thanks.</p>
+",ffmpeg
+5335709,PHP Ajax Realtime autosave Fwrite to config.txt,"<p>Im trying to figure this out but its really getting to me 2nd all day on trying code and searching ...</p>
+
+<p>Trying to see guidance if i am getting to the right direction with ajax and autosaving when a user performs an action on the button (BUT i do need to have a config.txt)</p>
+
+<p>Because its more of an Active running application for enabling/disabling an action with custom options needed on the fly.</p>
+
+<p>Trying to (ON page load )  read file config.txt  (and auto change the values on the form to what was read from config.txt like a 2 way async (Without reloading the page)</p>
+
+<p><strong>config.txt</strong></p>
+
+<pre><code>    active=1
+    email=1
+    markets=chi,nyc,orl,sfo
+    timer=15
+    emailaddress=test@gmail.com
+    logviewer=1
+</code></pre>
+
+<p>so Being that markets has option to add 1 or more i need to post with commas ...</p>
+
+<p>Thus when active=1 is enabled theres a bash script in the background that will be executed based on the selection of the active (when the user checks the box IN REALTIME) ... (onclick)</p>
+
+<p><strong>MAIN HTML</strong></p>
+
+<pre><code>&lt;html xmlns=""http://www.w3.org/1999/xhtml""&gt;
+&lt;head&gt;
+&lt;meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"" /&gt;
+&lt;title&gt;....Tools....&lt;/title&gt;
+
+
+&lt;script src=""js/ajaxsbmt.js"" type=""text/javascript""&gt;&lt;/script&gt;
+&lt;link rel=""stylesheet"" type=""text/css"" media=""all"" href=""http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/ui-darkness/jquery-ui.css""/&gt;
+
+
+&lt;script type=""text/javascript"" src=""http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js""&gt;&lt;/script&gt;
+&lt;script type=""text/javascript"" src=""http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js""&gt;&lt;/script&gt;
+&lt;script type=""text/javascript"" src=""../src/jquery.multiselect.js""&gt;&lt;/script&gt;
+&lt;script type=""text/javascript"" src=""../src/jquery.multiselect.filter.js""&gt;&lt;/script&gt;
+&lt;script type=""text/javascript"" src=""assets/prettify.js""&gt;&lt;/script&gt;
+
+&lt;link rel=""stylesheet"" type=""text/css"" href=""../jquery.multiselect.css"" /&gt;
+&lt;link rel=""stylesheet"" type=""text/css"" href=""assets/style.css"" /&gt;
+&lt;link rel=""stylesheet"" type=""text/css"" href=""assets/prettify.css"" /&gt;
+&lt;link rel=""stylesheet"" type=""text/css"" href=""http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css"" /&gt;
+
+&lt;script type=""text/javascript""&gt;
+$(function(){
+    $(""select"").multiselect({
+        selectedList: 4
+    });
+
+    $(""select"").multiselect().multiselectfilter();
+});
+&lt;/script&gt;
+
+&lt;script type=""text/javascript""&gt;
+function autosave()
+{
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject(""Microsoft.XMLHTTP"");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)
+        {
+            document.getElementById(""poll"").innerHTML=xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open(""GET"",""save.php?data=""+data,true);
+
+    if (multiple_id == ""marketlist"")
+    {
+        xmlhttp.send($value1"",""$value2"",""$value3"",""$value4"","")
+        // NEED TO FIGURE OUT HOW TO POST it as  CHI,ATL,NYC  or however many selected with comma seperated values as the line item Hmmmmmmmmm
+    }
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=""TESTING""&gt;
+    &lt;h3&gt;ENABLE Debug LOG VIEWER&lt;/h3&gt;
+    &lt;form&gt;
+        Yes:
+        &lt;input type=""radio"" id=""logger"" name=""logviewer"" value=""logger=1"" onclick=""autosave(this.value)"" /&gt;
+        &lt;br /&gt;No:
+        &lt;input type=""radio"" id=""logger"" name=""logviewer"" value=""logger=0"" onclick=""autosave(this.value)"" /&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+&lt;div id=""page""&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;label for=""ch_effects""&gt;ENABLE Diaster Script:&lt;/label&gt;&lt;input type=""checkbox"" id=""ch_enable"" name=""ch_enable"" data-on=""Enable"" data-off=""Disable"" onclick=""autosave(this.value)"" /&gt;&lt;/li&gt;
+
+
+Select Markets To be monitored
+
+&lt;form&gt;
+&lt;form name=""mkts"" method=""post"" action=""save.php""&gt;
+    &lt;select name=""marketlist"" multiple=""multiple"" style=""width:600px""&gt;
+        &lt;option value=""CHI""&gt;Chicago-CHI&lt;/option&gt;
+        &lt;option value=""CHI""&gt;Baltimore-BAL&lt;/option&gt;
+        &lt;option value=""NYC""&gt;New York-NYC&lt;/option&gt;
+        &lt;option value=""BDR""&gt;Bridgeport-BDR&lt;/option&gt;
+        &lt;option value=""PHL""&gt;Philadelphia-PHL&lt;/option&gt;
+        &lt;option value=""PHL""&gt;Pittsburgh-PIT&lt;/option&gt;
+        &lt;option value=""ORL""&gt;Orlando-ORL&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;input type=""submit"" id=""marketlist"" value=""what is selected Seperate by Commas"" name=""submit"" onclick=""autosave(this.value)"" /&gt;
+&lt;/p&gt;
+
+    &lt;li&gt;&lt;label for=""ch_location""&gt;Email notifications&lt;/label&gt;&lt;input type=""checkbox"" id=""ch_emailnotify"" name=""ch_emailnotify"" data-on=""ON"" data-off=""OFF"" onchange=""autosave(this.value)""/&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;label for=""ch_emails""&gt;Realtime log view&lt;/label&gt;&lt;input type=""checkbox"" id=""ch_logview"" name=""ch_logview"" data-on=""Show"" data-off=""Hide"" onchange=""autosave(this.value)""/&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+            &lt;p&gt;
+
+
+            &lt;div&gt;
+                &lt;input id=""email"" name=""email"" class=""element text medium"" type=""text"" maxlength=""255"" value="""" onchange=""autosave(this.value)""/&gt; 
+            &lt;/div&gt;
+            &lt;li class=""buttons""&gt;
+                &lt;input type=""hidden"" name=""form_id"" value=""CONFIG"" /&gt;
+
+                &lt;input id=""saveForm"" class=""button_text"" type=""submit"" name=""submit"" value=""Submit"" /&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt; 
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p><strong>SAVE.PHP</strong></p>
+
+<pre><code>&lt;?php
+$logger = $_REQUEST[""logger""];
+$active = $_REQUEST[""ch_enable""];
+$marketlist = $_REQUEST[""marketlist""];
+$emailnotify = $_REQUEST[""ch_emailnotify""];
+
+$filename=""config.txt"";
+$act = ""active='$active'"";
+$log = ""logger='$logger'"";
+$mkt = ""markets='$marketlist'"";
+$eml = ""email='$emailnotify'"";
+
+
+$fin=fopen($filename,""w"");
+
+fwrite($fin,$content);
+
+if ( $act = """" ) {
+    $cmd = ""grep 'active=' "" . $filename;
+    $output = system($cmd, $result);
+    $lines = explode(""\n"", $result);
+}
+
+
+
+if ( $log != """" ) {
+    $cmd = ""grep 'logger=' "" . $filename;
+    $output = system($cmd, $result);
+    $lines = explode(""\n"", $result);
+}
+
+if ( $mkt != """" ) {
+    $cmd = ""grep 'markets=' "" . $filename;
+    $output = system($cmd, $result);
+    $lines = explode(""\n"", $result);
+}
+
+if ( $eml != """" ) {
+    $cmd = ""grep 'email=' "" . $filename;
+    $output = system($cmd, $result);
+    $lines = explode(""\n"", $result);
+}
+
+fclose($fin);
+echo ""Data saved"";
+?&gt;
+</code></pre>
+",php javascript jquery ajax fwrite
+3485937,can I connect bespin to github,"<p>I was checking bespin documentation and I found this
+<a href=""https://wiki.mozilla.org/Labs/Bespin/DesignDocs/VCSIntegration"" rel=""nofollow"">https://wiki.mozilla.org/Labs/Bespin/DesignDocs/VCSIntegration</a>
+Here it says bespin can connect mercurial, svn and git. But I could not find those commands in bespin (I am using it from <a href=""https://bespin.mozillalabs.com/"" rel=""nofollow"">https://bespin.mozillalabs.com/</a>). I am spesifically trying to find a way to connect bespin to github, so I can have free online code editing solution. Did anybody else tried that? or is it possible.</p>
+",github bespin
+2445320,What is the maximum number of handled blocks for the bzip2 command line tool?,"<p>I know from the manual pages of bzip2 that it writes it's data in blocks, of sizes from 100-900kb. </p>
+
+<p>We have ran into a problem with a 150GB bzip2 file, that it gives an ""Unexpected EOF"" error when unpacking it.</p>
+
+<p>I realized that at least some subcomponents of the bzip2 tool set, such as bzip2recover, has a limit for the maximum number of blocks that it can process (50000 for bzip2recover). </p>
+
+<p>I could increase this by modifying the source code and recompile, but I tried to find a correpsonding limit in the bzip2 tool itself, which I suspect could be the reason for our ""EOF"" error on the file.</p>
+
+<p>I haven't been able to find the limit yet though, but maybe someone can point it out for me?</p>
+",bzip2
+1098055,Javadoc Custom Tag Search,"<p>I want to add a search option to my documentation that allows the user to search for info linked to a specific tag. I have generated the javadocs using the command line in windows with the -tag option for my custom ID tag. Each class has an ID number, I would like to have the user  be able to enter that ID and pull up the class. </p>
+
+<p>So far I have found this Chrome extension <a href=""http://code.google.com/p/javadoc-search-frame/"" rel=""nofollow"">http://code.google.com/p/javadoc-search-frame/</a> but it only searches for the class name.</p>
+
+<p>This is my first time working with Javadocs, any suggestions would be helpful. Thanks.</p>
+",java javadoc
+2925565,Remove leading subdirectories in a ZIP file,"<p>Is there any ZIP tools that do similar to the <code>patch -p1</code> command, where the first N directory names would get ignored?</p>
+
+<p>My users send me ZIP files that often contain one unnecessary directory, and instead of unzipping them in place, I have to unzip, then go into the subdirectory and move all the files out.  Sometimes it's a zip of thousands of files, and that extra move step can take a while. If 7z or something had <code>7z x -p1 my_zip.zip</code>, that first directory could be ignored.  I'd still want to have the directory tree inside that subdirectory.</p>
+",zip
+5188009,Which ghost software programmer use to backup their system?,"<blockquote>
+  <p><strong>Possible Duplicates:</strong><br>
+  <a href=""http://superuser.com/questions/18109/disk-imaging-software"">Disk Imaging Software</a><br>
+  <a href=""http://superuser.com/questions/7739/windows-backup-by-imaging"">Windows backup by Imaging</a>  </p>
+</blockquote>
+
+
+
+<p>I decided that I'll use ghost software to make a backup of the system software I have. Someone talking about that here:</p>
+
+<p><a href=""http://stackoverflow.com/questions/5131295/how-to-repair-visual-studio-2010-after-broken-installation-of-async-ctp"">http://stackoverflow.com/questions/5131295/how-to-repair-visual-studio-2010-after-broken-installation-of-async-ctp</a></p>
+
+<p>Are there any comparable backup software like ghost that is free and I can use without any hassle?</p>
+",ghost
+4276043,How would you handle this with read.transactions in R arules package?,"<p>I'm trying to read a .txt file with the function <code>read.transactions</code>. This is the structure of my file:</p>
+
+<pre><code>1121,1141,1212,1311,1343,2111,2171,2213,2215,2311,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1111,1112,1126,1145,1146,1181,1213,1441,2122,2322,3311,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1172,2131,2173,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1141,1223,1416,2322,2323,112701,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+</code></pre>
+
+<p>I'm using this line of code to carry this out: </p>
+
+<pre><code>tr &lt;- read.transactions(""disco.txt"", format = ""basket"", sep=',',rm.duplicates= TRUE)
+</code></pre>
+
+<p>but what I am getting is something like this (<code>inspect(head(tr))</code>):</p>
+
+<pre><code>1 {,      
+   1121,  
+   1141,  
+   1212,  
+   1311,  
+   1343,  
+   2111,  
+   2171,  
+   2213,  
+   2215,  
+   2311}  
+2 {,      
+   1111,  
+   1112,  
+   1126,  
+   1145,  
+   1146,  
+   1181,  
+   1213,  
+   1441,  
+   2122,  
+   2322,  
+   3311} 
+.
+.
+.
+</code></pre>
+
+<p>My question is: how can I remove the 'empty' itemset from these transactions? The idea is apply the apriori algorithm later in order to get attractive rules. Do you know if that algorithm <code>apriori</code> in <code>R</code> can handle this issue? I've applied the apriori algorithm with the transactions I've just showed you but many of them are useless in terms of containing the empty itemset. </p>
+
+<p>Many thanks in advance!
+Regards!</p>
+",r
+4383942,Why this simple hibernate sample doesn't work?,"<p>I wrote these two classes:</p>
+
+<pre><code>public class ClasseA {
+
+    Integer id;
+    String numero;
+    ClasseB cb;
+
+    public ClasseB getCb() {
+        return cb;
+    }
+
+    public void setCb(ClasseB cb) {
+        this.cb = cb;
+    }
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+}
+</code></pre>
+
+<p>and </p>
+
+<pre><code>public class ClasseB {
+
+    Integer id;
+    String annotazione;
+
+    public String getAnnotazione() {
+        return annotazione;
+    }
+
+    public void setAnnotazione(String annotazione) {
+        this.annotazione = annotazione;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+
+}
+</code></pre>
+
+<p>As you can see in ClasseA there is a reference to ClasseB.</p>
+
+<p>this is the mapping:</p>
+
+<pre><code>    &lt;?xml version=""1.0"" encoding=""UTF-8""?&gt;
+&lt;!DOCTYPE hibernate-mapping PUBLIC ""-//Hibernate/Hibernate Mapping DTD 3.0//EN"" ""http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd""&gt;
+&lt;hibernate-mapping&gt;
+  &lt;class dynamic-insert=""false"" dynamic-update=""false"" mutable=""true"" name=""ClasseA"" optimistic-lock=""version"" polymorphism=""implicit"" select-before-update=""false""&gt;
+    &lt;id name=""id"" type=""java.lang.Integer""&gt;
+      &lt;column name=""id""/&gt;
+      &lt;generator class=""identity""/&gt;
+    &lt;/id&gt;
+    &lt;property name=""numero"" type=""java.lang.String""&gt;
+      &lt;column name=""numero""/&gt;
+    &lt;/property&gt;
+    &lt;one-to-one cascade=""all"" class=""ClasseB"" name=""cb""/&gt;
+  &lt;/class&gt;
+  &lt;class dynamic-insert=""false"" dynamic-update=""false"" mutable=""true"" name=""ClasseB"" optimistic-lock=""version"" polymorphism=""implicit"" select-before-update=""false""&gt;
+    &lt;id name=""id"" type=""java.lang.Integer""&gt;
+      &lt;column name=""id""/&gt;
+      &lt;generator class=""identity""/&gt;
+    &lt;/id&gt;
+    &lt;property name=""annotazione"" type=""java.lang.String""&gt;
+      &lt;column name=""annotazione""/&gt;
+    &lt;/property&gt;
+  &lt;/class&gt;
+&lt;/hibernate-mapping&gt;
+</code></pre>
+
+<p>Two things don't work as expected:</p>
+
+<ul>
+<li><p>First of all, since I'm using hdb2ddl with update I'd expect do generate a table for classeA with a reference to classeB (and of course a table for classeB). Which isn't. All I get is: </p>
+
+<p>CREATE TABLE <code>classea</code> (
+  <code>id</code> INT(11) NOT NULL AUTO_INCREMENT,
+  <code>numero</code> VARCHAR(255) DEFAULT NULL,<br>
+  PRIMARY KEY (<code>id</code>)
+) ENGINE=INNODB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1</p>
+
+<p>CREATE TABLE <code>classeb</code> (
+  <code>id</code> int(11) NOT NULL AUTO_INCREMENT,
+  <code>annotazione</code> varchar(255) DEFAULT NULL,
+  PRIMARY KEY (<code>id</code>)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1</p></li>
+<li><p>Second: If I save an istance of classeA with cb correctly set to a cb istance, it will work putting a row on the first and a row on the second table. But on retrivial it doesn't even load classeA.... </p></li>
+</ul>
+
+<p>Please help as I think I didn't understand properly this kind of association. Please don't suggest to use annotations as I can't. Tnx in advance.</p>
+",java hibernate
+1219146,Make an AJAX call to a php file --> then quit browser --> will the php file still run completely?,"<p>If a user clicks a button that will make an ajax post call to a php file, then navigates away from the website or closes the window, will the php file run completely until it finishes?</p>
+
+<p>i want the file to download stuff to my server and post a bunch of information into a mysql database. This could take a minute or two. But i want the task to finish completely no matter what the user does. </p>
+
+<p>if the ajax post/request gets sent, will the file run through completely?</p>
+
+<p>thanks for any info. </p>
+",php ajax post
+3405407,what could be a suitable datatype for storing telephone numbers in sql server 2005?,"<blockquote>
+  <p><strong>Possible Duplicate:</strong><br>
+  <a href=""http://stackoverflow.com/questions/75105/what-datatype-should-be-used-for-storing-phone-numbers-in-sql-server-2005"">What datatype should be used for storing phone numbers in SQL Server 2005?</a>  </p>
+</blockquote>
+
+
+
+<p>There are various datatypes from which i can choose for example varchar or bigint or decimal or money but which one could be the best in all respect.</p>
+",sql-server-2005
+5325368,PHP loop syntax issues,"<p>I need to add a counter to the loop as well as pulling contents. What is the syntax for adding the ""and for ($ColCount = ColCount + 1)""</p>
+
+<pre><code>&lt;?php $ColCount = 0?&gt;
+&lt;!--get artwork thumbnails --&gt; 
+&lt;?php
+$dbname = 'pdartist2';
+$table = 'artwork';
+// query
+$result = mysql_query(""SELECT AID, ThumbFilePath, Title, DisplayOrder FROM artwork where SCID = '$SCID' "") or die(mysql_error());
+while($row = mysql_fetch_row($result))
+{
+    foreach($row as $cell)
+    and for ($ColCount = ColCount + 1) 
+
+echo ""$ColCount"", ""$cell"";
+}
+mysql_free_result($result);
+?&gt;
+</code></pre>
+",php
+5665050,get URL from xml in to Flash AS3,"<p>Im trying to get a flash file get the URL from a XML file, but when I check my trace in flash i get undefind. Can't figure out why it's not working.</p>
+
+<p>This is my xml:</p>
+
+<pre><code>&lt;?XML version=""1.0"" encoding=""utf-8""?&gt;
+&lt;link targ=""_self"" href=""http://www.stackoverflow.com""&gt; &lt;/link&gt;
+</code></pre>
+
+<p>and my actionscript in as2 on my button:</p>
+
+<pre><code>on (Release)
+{
+urlXML = new XML();
+urlXML.ignoreWhite = true;
+urlXML.load(""xmlurl.xml"");
+urlXML.onLoad = function (success)
+{
+}
+  trace(""success is ""+success);
+  var url = urlXML.firstChild.attributes.href;
+  trace(""url = ""+url);
+
+  {
+      trace(""pressed with ""+url);
+    getURL(url);
+  }
+
+}
+</code></pre>
+
+<p>Can someone give me some guidelins how to get his right</p>
+
+<p>Thanks!</p>
+",xml flash
+292251,Standard(s) for client-side definition of advanced search?,"<p>Is there some kind of established standard or search-meta-language for defining advanced search? Some defined standard for the use of wildcards, logical operators, labels or categories etc.?</p>
+
+<p>Something like Googles possibility to use ""OR"", ""+"" etc for logical definitions, ""label:news"" for specifying a category etc.?</p>
+
+<p>(This client-side ""meta-language"" will later be translated to an server-side sql query. If there are established solutions for this translations, that's of course interesting too!)</p>
+",sql
+2968442,Building an array where each element depends on the previous,"<p>I'm building a set of arrays where each element depends on the previous element, and I'm having a hard time coming up with an elegant solution for setting the initial value. The code looks something like this:</p>
+
+<pre><code>int A[1024];
+int B[1024];
+/* ... more arrays... */
+int i;
+for (i = 0; i &lt; 1024; i++) {
+    /* do some work */
+    A[i] = A[i-1] + some_value();
+    B[i] = B[i-1] + some_other_value();
+    /* ... and so on... */
+}
+</code></pre>
+
+<p>But of course this is an invalid memory access when <code>i</code> is 0. I know that the initial values of all arrays should be 0.</p>
+
+<p>There are several ways to solve this problem. I could put a giant <code>if</code> statement in the loop to check if <code>i</code> is 0. Seems clunky since it will only evaluate to <code>true</code> once. I could keep a temporary variable, initialized to 0, for each array, called <code>prev_val_of_A</code>, etc, that holds the value of the last iteration. I'd have to update it to the current value at the end of every iteration. This seems a little silly since, most of the time, the value I want is sitting right there in the array's previous element. I could fiddle with the meaning of the array, and adopt the convention that the <em>second</em> element in the array contains the value for the <em>first</em> iteration of the loop; that is, allocate for <code>A[1025]</code>, initialize <code>A[0]</code>, then in the loop, do</p>
+
+<pre><code>A[i+1] = A[i] + some_value();
+</code></pre>
+
+<p>This seems confusing and might invite errors on further use of <code>A</code>.</p>
+
+<p>I'm looking for clean, elegant suggestions to solve this issue.</p>
+",c arrays
+5199196,Android GroundOverlay sets incorrect position,"<p>I try to make a location app based on Android Maps API v2. I add marker for my location point and a GroundOverlay circle for location accuracy. But GroundOverlay setPosition function sets slightly different. I can't find why.</p>
+
+<pre><code>        package com.example.locator;
+
+    import com.google.android.gms.maps.CameraUpdateFactory;
+    import com.google.android.gms.maps.GoogleMap;
+    import com.google.android.gms.maps.SupportMapFragment;
+    import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+    import com.google.android.gms.maps.model.GroundOverlay;
+    import com.google.android.gms.maps.model.GroundOverlayOptions;
+    import com.google.android.gms.maps.model.LatLng;
+    import com.google.android.gms.maps.model.Marker;
+    import com.google.android.gms.maps.model.MarkerOptions;
+
+    import android.location.Criteria;
+    import android.location.Location;
+    import android.location.LocationListener;
+    import android.location.LocationManager;
+    import android.os.Bundle;
+    import android.content.Context;
+    import android.support.v4.app.FragmentActivity;
+    import android.view.Menu;
+
+    public class MainActivity extends FragmentActivity implements LocationListener
+     {
+        GoogleMap mMap;
+        Location                lastLocation = null;
+        private LocationManager locationManager;
+        private String provider;
+        Marker curLoc = null; 
+        GroundOverlay curLocCircle = null; 
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);  
+            setContentView(R.layout.activity_main);
+
+            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(22.375675950685434, 29.83346939086914), 13));
+
+            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+            Criteria criteria = new Criteria();
+            provider = locationManager.getBestProvider(criteria, false);
+            Location location = locationManager.getLastKnownLocation(provider);
+
+            if (location != null) {
+                onLocationChanged(location);
+            } else {
+                //empty
+            }
+            locationManager.requestLocationUpdates(provider, 400, 1, this);
+        } 
+
+        @Override
+        public boolean onCreateOptionsMenu(Menu menu) {
+            // Inflate the menu; this adds items to the action bar if it is present.
+            getMenuInflater().inflate(R.menu.activity_main, menu);
+            return true;
+        }
+
+
+        public void onLocationChanged(Location location) {
+            if (location != null) {
+
+                if (null != curLoc) {
+                    curLoc.remove();
+                }
+                if (null != curLocCircle) {
+                    curLocCircle.remove();
+                }
+
+                LatLng loc = new LatLng(location.getLatitude(),location.getLongitude());
+                curLoc = mMap.addMarker(new MarkerOptions()
+                .position(loc)
+                .title(""My location"")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.location32)));
+
+                float accuracy = location.getAccuracy();
+
+                curLocCircle = mMap.addGroundOverlay(new GroundOverlayOptions()
+                        .image(BitmapDescriptorFactory
+                                .fromResource(R.drawable.location_circle))
+                        .position(loc, accuracy)
+                        .transparency(0)
+                );
+                curLocCircle.setPosition(loc);
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, 13));
+            }
+        }
+
+        public void onProviderDisabled(String provider) {
+            // TODO Auto-generated method stub
+
+        }
+
+        public void onProviderEnabled(String provider) {
+            // TODO Auto-generated method stub
+
+        }
+
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+            // TODO Auto-generated method stub
+
+        }
+
+    }
+</code></pre>
+
+<p>When I pause app in debugger on line</p>
+
+<pre><code>mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, 13));
+</code></pre>
+
+<p>watches shows this data:</p>
+
+<pre><code>curLocCircle.getPosition()  lat/lng: (22.397815012772206,29.954818561673164)
+location.getLatitude()      22.397815
+location.getLongitude()     29.9548184
+loc                         lat/lng: (22.397815,29.9548184)
+</code></pre>
+
+<p>curLocCircle.getPosition() somehow shows incorrect location write after setPosition(loc); 
+Please help me with that.</p>
+",android map location
